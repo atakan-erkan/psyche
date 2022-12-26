@@ -1,136 +1,323 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="bootstrap-5.2.2-dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" 
-      integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" 
-          crossorigin="anonymous" referrerpolicy="no-referrer">
-    <link rel="stylesheet" href="style.css">
-    <script src="bootstrap-5.2.2-dist/js/bootstrap.bundle.min.js"></script>
+    <link
+      rel="canonical"
+      href="https://getbootstrap.com/docs/5.2/examples/sidebars/"
+    />
+    <link href="bootstrap-5.2.2-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+      integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
     <title>PSYCHE | Psikolojik Destek ve Yardım Sitesi</title>
     <style>
-        h1 , h2 {
-            margin: 5px;
-            color:brown;
-            text-decoration:underline;
-            font-family: 'Times New Roman', Times, serif;
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
         }
-        p {
-            font-weight: 500;
-            margin: 10px;
-            font-size: 18px;
-        }
+      }
+
+      .b-example-divider {
+        height: 3rem;
+        background-color: rgba(0, 0, 0, 0.1);
+        border: solid rgba(0, 0, 0, 0.15);
+        border-width: 1px 0;
+        box-shadow: inset 0 0.5em 1.5em rgba(0, 0, 0, 0.1),
+          inset 0 0.125em 0.5em rgba(0, 0, 0, 0.15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -0.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
     </style>
-</head>
-
-<body>
-    <nav class="navbar navbar-expand-lg navbar-light">
-        <i class="fa-solid fa-stethoscope fa-2x p-1"> <a class="navbar-brand" href="index.html">p s y c h e </a> </i>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="index.html">Anasayfa <span class="sr-only">(current)</span></a
-            >
-          </li>
-          <li class="nav-item
-          ">
-            <a class="nav-link" href="psikoloji.html">Psikoloji</a>
-                </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Doktorlar
-                  </a>
-                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="doktorlar.html">Doktorlarımız</a>
-                    <a class="dropdown-item" href="doktor-post.html">Doktorların Paylaşımları</a>
-                  </div>
-                </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Paylaşımlar
-                  </a>
-                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="index.html">Kullanıcı Paylaşımlar</a>
-                    <a class="dropdown-item" href="doktor-post.html">Doktorların Paylaşımları</a>
-                    <a class="dropdown-item" href="#">Tavsiye Paylaşımları</a>
-                  </div>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="hakkımızda.html">Hakkımızda</a>
-                </li>
-            </ul>
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="giris.html">Giriş Yap</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Kayıt Ol
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="d-flex flex-nowrap">
+      <div class="d-flex flex-column flex-shrink-0 p-3 dark main-navbar">
+        <i class="fa-solid fa-stethoscope fa-2x p-1 logo">
+          <a class="navbar-brand black" href="index.html">
+            <strong class="logo-text">p s y c h e</strong>
           </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="kayit-ol.html">Hasta Kayıt</a>
-                        <a class="dropdown-item" href="doktor-kayit.html">Doktor Kayıt</a>
-
+        </i>
+        <hr class="black" />
+        <ul class="nav nav-pills flex-column mb-auto">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link black link">
+              <i class="fa-sharp fa-solid fa-house-chimney"></i>
+              <strong>Ana Sayfa</strong>
+            </a>
+          </li>
+          <li>
+            <a href="psikoloji.html" class="nav-link black link">
+              <i class="fa-solid fa-brain"></i>
+              <strong>Psikoloji</strong>
+            </a>
+          </li>
+          <li>
+            <div class="dropdown">
+              <a
+                href="#"
+                class="nav-link dropdown-toggle black link"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                ><i class="fa-solid fa-user-doctor"></i>
+                <strong>Doktorlar</strong>
+              </a>
+              <ul class="dropdown-menu dropdown-dark text-small shadow">
+                <li><a class="dropdown-item" href="#">Doktorlarımız</a></li>
+                <li>
+                  <a class="dropdown-item" href="#">Doktorların Paylaşımları</a>
                 </li>
-            </ul>
-            <form class="d-flex p-1">
-                <input class="form-control me-2" type="search" placeholder="Ara" aria-label="Search" />
-                <button class="btn btn-outline-dark ms-auto" type="submit">Ara</button>
-            </form>
+              </ul>
             </div>
-    </nav>
-    <div>
-        <h1 style="text-align: center; margin: 10px;">PSİKOLOJİ</h1>
+          </li>
+          <li>
+            <div class="dropdown">
+              <a
+                href="#"
+                class="nav-link dropdown-toggle black link"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                ><i class="fa-solid fa-share"></i>
+                <strong>Paylaşımlar</strong>
+              </a>
+              <ul class="dropdown-menu dropdown-dark text-small shadow">
+                <li>
+                  <a class="dropdown-item" href="#">Kullanıcı Paylaşımları</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">Doktorların Paylaşımları</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">Tavsiye Paylaşımlar</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <a href="#" class="nav-link black link">
+              <i class="fa-solid fa-bars"></i>
+              <strong>Hakkımızda</strong>
+            </a>
+          </li>
+        </ul>
+        <hr class="black" />
+        <div class="dropdown">
+          <a
+            href="#"
+            class="d-flex align-items-center black text-decoration-none dropdown-toggle"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <img
+              src="images/profil.jpg"
+              alt=""
+              width="32"
+              height="32"
+              class="rounded-circle me-2"
+            />
+            <strong>Kullanıcı</strong>
+          </a>
+          <ul class="dropdown-menu dropdown-dark text-small shadow">
+            <li><a class="dropdown-item" href="#">Geçmiş Sorularım</a></li>
+            <li><a class="dropdown-item" href="#">Ayarlar</a></li>
+            <li><a class="dropdown-item" href="#">Profil</a></li>
+            <li><hr class="dropdown-divider" /></li>
+            <li><a class="dropdown-item" href="#">Çıkış Yap</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="container-fluid scrollarea container-bg">
+        <div class="row">
+          <div class="col-sm-9">
+            <div class="mt-5 container-nav text-center">
+              <a class="float-start ms-3 plus black" onclick="formActive()"
+                ><i class="fa-solid fa-plus fa"></i
+              ></a>
+              <a href="" class="ms-4 text-decoration-none black"
+                >Doktorların Paylaşımları</a
+              >
+              <a href="" class="ms-4 text-decoration-none black"
+                >Tavsiye Paylaşımlar</a
+              >
+              <a class="float-end ms-3 plus black" onclick="Beyaz()">
+                <i class="fa-solid fa-moon"></i>
+              </a>
+            </div>
+            <hr />
+            <div>
+              <h1 style="text-align: center; margin: 10px">PSİKOLOJİ</h1>
 
-        <h2>Psikoloji Tanımı:</h2>
-        <p>Zihinsel süreç ve davranışların bilimsel çalışmasını içeren bir akademik ve uygulamalı bir bilim dalıdır. Psikologlar,algı,dikkat,duygu,kişilik,davranış ve kişiler arası ilişkiler gibi olguların üzerinde çalışırlar.Psikoloji aynı zamanda aile , iş gibi günlük yaşamda dahil olmak üzere , bu tür bilgilerin insan faaliyetlerinin farklı alanlarına uygulanması ve akıl sağlığı sorunlarının tedavisi ile ilgilenir.</p>
+              <h2>Psikoloji Tanımı:</h2>
+              <p>
+                Zihinsel süreç ve davranışların bilimsel çalışmasını içeren bir
+                akademik ve uygulamalı bir bilim dalıdır.
+                Psikologlar,algı,dikkat,duygu,kişilik,davranış ve kişiler arası
+                ilişkiler gibi olguların üzerinde çalışırlar.Psikoloji aynı
+                zamanda aile , iş gibi günlük yaşamda dahil olmak üzere , bu tür
+                bilgilerin insan faaliyetlerinin farklı alanlarına uygulanması
+                ve akıl sağlığı sorunlarının tedavisi ile ilgilenir.
+              </p>
 
-        <h2>Psikolojik Destek Hangi Durumlarda Alınabilir?</h2>
-        <p>Psikolojik hizmetlere başvurmak için spesifik bir problem yaşıyor olmaya gerek yok. Duygu, düşünce ve bunların etki ettiği davranışlar üzerine konuşmak için de destek aranabilir. Ancak çoğunlukla destek talebi psikolojik sorunlar kaçınılmaz bir hal aldığında yapılır. Kimi zaman bu belirtiler kişinin kendisini rahatsız eder. Kimi zamansa belirtiler çevre tarafından fark edilir ve kişi bir uzmana yönlendirilir.</p>
+              <h2>Psikolojik Destek Hangi Durumlarda Alınabilir?</h2>
+              <p>
+                Psikolojik hizmetlere başvurmak için spesifik bir problem
+                yaşıyor olmaya gerek yok. Duygu, düşünce ve bunların etki ettiği
+                davranışlar üzerine konuşmak için de destek aranabilir. Ancak
+                çoğunlukla destek talebi psikolojik sorunlar kaçınılmaz bir hal
+                aldığında yapılır. Kimi zaman bu belirtiler kişinin kendisini
+                rahatsız eder. Kimi zamansa belirtiler çevre tarafından fark
+                edilir ve kişi bir uzmana yönlendirilir.
+              </p>
 
-        <h2>Psikoloğa gitmenin faydası ne ? Bana nasıl yardımcı olur?</h2>
-        <p>Hayatınızda yaşadığınız bir durum sizin normal hayatınızın işlevselliğini bozuyorsa , yaşam kalitenizi düşürüyorsa ve belli bir süredir devam ediyorsa psikolojik problem yaşıyorsunuz diyebiliriz.Psikolojik problem yaşayan birisi bu sorununu çözmek istiyorsa bir psikologtan yardım almalı.</p>
+              <h2>Psikoloğa gitmenin faydası ne ? Bana nasıl yardımcı olur?</h2>
+              <p>
+                Hayatınızda yaşadığınız bir durum sizin normal hayatınızın
+                işlevselliğini bozuyorsa , yaşam kalitenizi düşürüyorsa ve belli
+                bir süredir devam ediyorsa psikolojik problem yaşıyorsunuz
+                diyebiliriz.Psikolojik problem yaşayan birisi bu sorununu çözmek
+                istiyorsa bir psikologtan yardım almalı.
+              </p>
 
-        <h2>PSİKOLOJİK DESTEK ALINMASI GEREKEN DURUMLAR</h2>
-        <p>⦁	Gelecekle ilgili kaygı,karamsarlık ve umutsuzluk duygularının yoğun olması.
-            <br>
-            ⦁	Sebebi belli olmayan duygusal ve ruhsal bir bıkkınlık veya çökkünlük
-            <br>
-            ⦁	Bir aydan uzun süren bir uyku bozukluğu varsa
-            <br>
-            ⦁	Evlilik,boşanma,iş değişikliği ve sosyal ilişkiler gibi konularda önemli bir karar aşamasında olup , ne yapılacağına karar verilememesi.
-            <br>
-            ⦁	Kişinin kendisine ve çevresine zarar vermeye başlaması.
-            <br>
-            ⦁	Kimsenin duymadığı seslerin duyulması, kimsenin görmediği görüntülerin görülmesi.
-            <br>
-            ⦁	Kontrol edilemeyen panik ve öfke krizlerinin olması.
-            <br>
-            ⦁	Bireyin yaşam kalitesini düşüren , işlevselliğini azaltan konularda destek alınabilir. (performans kaygısı,sosyal fobi,panik atak,obsesif kompulsif bozukluk gibi)
-            <br>
-            ⦁	Akran zorbalığı.
-            <br>
-            ⦁	Ergenlik çağı sorunları.
-            <br>
-            ⦁	İstismar ve ihmal.
-            <br>
-            ⦁	Kaygılar ve fobiler
-            <br>
-            ⦁	Bunalım,intihar düşünceleri
-            <br>
-            ⦁	Temel güven ve bağlanma problemleri.
-            </p>
-    </div>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>
-</body>
+              <h2>PSİKOLOJİK DESTEK ALINMASI GEREKEN DURUMLAR</h2>
+              <p>
+                ⦁ Gelecekle ilgili kaygı,karamsarlık ve umutsuzluk duygularının
+                yoğun olması.
+                <br />
+                ⦁ Sebebi belli olmayan duygusal ve ruhsal bir bıkkınlık veya
+                çökkünlük
+                <br />
+                ⦁ Bir aydan uzun süren bir uyku bozukluğu varsa
+                <br />
+                ⦁ Evlilik,boşanma,iş değişikliği ve sosyal ilişkiler gibi
+                konularda önemli bir karar aşamasında olup , ne yapılacağına
+                karar verilememesi.
+                <br />
+                ⦁ Kişinin kendisine ve çevresine zarar vermeye başlaması.
+                <br />
+                ⦁ Kimsenin duymadığı seslerin duyulması, kimsenin görmediği
+                görüntülerin görülmesi.
+                <br />
+                ⦁ Kontrol edilemeyen panik ve öfke krizlerinin olması.
+                <br />
+                ⦁ Bireyin yaşam kalitesini düşüren , işlevselliğini azaltan
+                konularda destek alınabilir. (performans kaygısı,sosyal
+                fobi,panik atak,obsesif kompulsif bozukluk gibi)
+                <br />
+                ⦁ Akran zorbalığı.
+                <br />
+                ⦁ Ergenlik çağı sorunları.
+                <br />
+                ⦁ İstismar ve ihmal.
+                <br />
+                ⦁ Kaygılar ve fobiler
+                <br />
+                ⦁ Bunalım,intihar düşünceleri
+                <br />
+                ⦁ Temel güven ve bağlanma problemleri.
+              </p>
+            </div>
+          </div>
+          <div class="col-sm mt-5">
+            <form class="d-flex" role="search">
+              <input
+                class="form-control me-2 form-search"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <button class="btn btn-warning" type="submit">Search</button>
+            </form>
+            <div class="mt-3 p-title">İlgini çekebilecek paylaşımlar</div>
+            <hr class="mt-2" />
+            <div class="row">
+              <div class="col-sm-3">
+                <img
+                  class="w-100"
+                  src="images/profil.jpg"
+                  alt=""
+                  style="border-radius: 50%"
+                />
+              </div>
+              <div class="col-sm-8">
+                Lorem ipsum dolor sit amet consectetur.
+              </div>
+            </div>
+            <hr />
+            <div class="row">
+              <div class="col-sm-3">
+                <img
+                  class="w-100"
+                  src="images/profil.jpg"
+                  alt=""
+                  style="border-radius: 50%"
+                />
+              </div>
+              <div class="col-sm-8">
+                Lorem ipsum dolor sit amet consectetur.
+              </div>
+            </div>
+            <hr />
+            <div class="row">
+              <div class="col-sm-3">
+                <img
+                  class="w-100"
+                  src="images/profil.jpg"
+                  alt=""
+                  style="border-radius: 50%"
+                />
+              </div>
+              <div class="col-sm-8">Lorem ipsum dolor sit amet.</div>
+            </div>
+            <hr />
+          </div>
+        </div>
+      </div>
+    </main>
 
+    <script src="bootstrap-5.2.2-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="app.js"></script>
+  </body>
 </html>

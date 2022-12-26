@@ -1,150 +1,243 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="bootstrap-5.2.2-dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" 
-      integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" 
-          crossorigin="anonymous" referrerpolicy="no-referrer">
-    <link rel="stylesheet" href="style.css">
-    <script src="bootstrap-5.2.2-dist/js/bootstrap.bundle.min.js"></script>
+    <link
+      rel="canonical"
+      href="https://getbootstrap.com/docs/5.2/examples/sidebars/"
+    />
+    <link href="bootstrap-5.2.2-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+      integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
     <title>PSYCHE | Psikolojik Destek ve Yardım Sitesi</title>
-</head>
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
 
-<body>
-    <nav class="navbar navbar-expand-lg navbar-light">
-        <i class="fa-solid fa-stethoscope fa-2x p-1"> <a class="navbar-brand" href="index.html">p s y c h e </a> </i>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="index.html">Anasayfa <span class="sr-only">(current)</span></a
-            >
-          </li>
-          <li class="nav-item
-          ">
-            <a class="nav-link" href="psikoloji.html">Psikoloji</a>
-                </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Doktorlar
-                  </a>
-                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="doktorlar.html">Doktorlarımız</a>
-                    <a class="dropdown-item" href="doktor-post.html">Doktorların Paylaşımları</a>
-                  </div>
-                </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Paylaşımlar
-                  </a>
-                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="index.html">Kullanıcı Paylaşımlar</a>
-                    <a class="dropdown-item" href="doktor-post.html">Doktorların Paylaşımları</a>
-                    <a class="dropdown-item" href="#">Tavsiye Paylaşımları</a>
-                  </div>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="hakkımızda.html">Hakkımızda</a>
-                </li>
-            </ul>
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="giris.html">Giriş Yap</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Kayıt Ol
+      .b-example-divider {
+        height: 3rem;
+        background-color: rgba(0, 0, 0, 0.1);
+        border: solid rgba(0, 0, 0, 0.15);
+        border-width: 1px 0;
+        box-shadow: inset 0 0.5em 1.5em rgba(0, 0, 0, 0.1),
+          inset 0 0.125em 0.5em rgba(0, 0, 0, 0.15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -0.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+    </style>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="d-flex flex-nowrap">
+      <div class="d-flex flex-column flex-shrink-0 p-3 dark main-navbar">
+        <i class="fa-solid fa-stethoscope fa-2x p-1 logo">
+          <a class="navbar-brand black" href="index.html">
+            <strong class="logo-text">p s y c h e</strong>
           </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="kayit-ol.html">Hasta Kayıt</a>
-                        <a class="dropdown-item" href="doktor-kayit.html">Doktor Kayıt</a>
-
+        </i>
+        <hr class="black" />
+        <ul class="nav nav-pills flex-column mb-auto">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link black link">
+              <i class="fa-sharp fa-solid fa-house-chimney"></i>
+              <strong>Ana Sayfa</strong>
+            </a>
+          </li>
+          <li>
+            <a href="psikoloji.html" class="nav-link black link">
+              <i class="fa-solid fa-brain"></i>
+              <strong>Psikoloji</strong>
+            </a>
+          </li>
+          <li>
+            <div class="dropdown">
+              <a
+                href="#"
+                class="nav-link dropdown-toggle black link"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                ><i class="fa-solid fa-user-doctor"></i>
+                <strong>Doktorlar</strong>
+              </a>
+              <ul class="dropdown-menu dropdown-dark text-small shadow">
+                <li><a class="dropdown-item" href="#">Doktorlarımız</a></li>
+                <li>
+                  <a class="dropdown-item" href="#">Doktorların Paylaşımları</a>
                 </li>
-            </ul>
-            <form class="d-flex p-1">
-                <input class="form-control me-2" type="search" placeholder="Ara" aria-label="Search" />
-                <button class="btn btn-outline-dark ms-auto" type="submit">Ara</button>
-            </form>
+              </ul>
             </div>
-    </nav>
-    <div class="container ">
-        <h1 class="text-xl-center">Doktorlarımız</h1>
-        <div class="card dr m-2" style="width: 18rem;">
+          </li>
+          <li>
+            <div class="dropdown">
+              <a
+                href="#"
+                class="nav-link dropdown-toggle black link"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                ><i class="fa-solid fa-share"></i>
+                <strong>Paylaşımlar</strong>
+              </a>
+              <ul class="dropdown-menu dropdown-dark text-small shadow">
+                <li>
+                  <a class="dropdown-item" href="#">Kullanıcı Paylaşımları</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">Doktorların Paylaşımları</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">Tavsiye Paylaşımlar</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <a href="#" class="nav-link black link">
+              <i class="fa-solid fa-bars"></i>
+              <strong>Hakkımızda</strong>
+            </a>
+          </li>
+        </ul>
+        <hr class="black" />
+        <div class="dropdown">
+          <a
+            href="#"
+            class="d-flex align-items-center black text-decoration-none dropdown-toggle"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <img
+              src="images/profil.jpg"
+              alt=""
+              width="32"
+              height="32"
+              class="rounded-circle me-2"
+            />
+            <strong>Kullanıcı</strong>
+          </a>
+          <ul class="dropdown-menu dropdown-dark text-small shadow">
+            <li><a class="dropdown-item" href="#">Geçmiş Sorularım</a></li>
+            <li><a class="dropdown-item" href="#">Ayarlar</a></li>
+            <li><a class="dropdown-item" href="#">Profil</a></li>
+            <li><hr class="dropdown-divider" /></li>
+            <li><a class="dropdown-item" href="#">Çıkış Yap</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="container-fluid scrollarea container-bg">
+        <div class="row">
+          <div class="col-sm-6 col-md-4 col-lg-3"><div class="card dr m-2">
             <img src="images/kadın-doktor.jpg" class="card-img-top img" alt="...">
             <div class="card-body">
               <h5 class="card-title">Ayşe Deniz</h5>
               <p class="card-text">BOĞAZİÇİ ÜNİVERSİTESİ - Psikoloji</p>
-              <a href="#" class="btn btn-primary" style="float:right;">Profile Git</a>
+              <a href="#" class="btn btn-warning" style="float:right;">Profile Git</a>
             </div>
-          </div>
-          <div class="card dr m-2" style="width: 18rem;">
+          </div></div>
+          <div class="col-sm-6 col-md-4 col-lg-3"><div class="card dr m-2">
             <img src="images/erkek-doktor.jpg" class="card-img-top img" alt="...">
             <div class="card-body">
               <h5 class="card-title">Mehmet Koç</h5>
               <p class="card-text">BİLKENT ÜNİVERSİTESİ - Psikoloji</p>
-              <a href="#" class="btn btn-primary" style="float:right;">Profile Git</a>
+              <a href="#" class="btn btn-warning" style="float:right;">Profile Git</a>
             </div>
-          </div>
-        <div class="card dr m-2" style="width: 18rem;">
+          </div></div>
+          <div class="col-sm-6 col-md-4 col-lg-3"><div class="card dr m-2">
             <img src="images/kadın-doktor.jpg" class="card-img-top img" alt="...">
             <div class="card-body">
               <h5 class="card-title">Ayşe Deniz</h5>
               <p class="card-text">BOĞAZİÇİ ÜNİVERSİTESİ - Psikoloji</p>
-              <a href="#" class="btn btn-primary" style="float:right;">Profile Git</a>
+              <a href="#" class="btn btn-warning" style="float:right;">Profile Git</a>
             </div>
-          </div>
-          <div class="card dr m-2" style="width: 18rem;">
+          </div></div>
+          <div class="col-sm-6 col-md-4 col-lg-3"><div class="card dr m-2">
             <img src="images/erkek-doktor.jpg" class="card-img-top img" alt="...">
             <div class="card-body">
               <h5 class="card-title">Mehmet Koç</h5>
               <p class="card-text">BİLKENT ÜNİVERSİTESİ - Psikoloji</p>
-              <a href="#" class="btn btn-primary" style="float:right;">Profile Git</a>
+              <a href="#" class="btn btn-warning" style="float:right;">Profile Git</a>
             </div>
-          </div>
-        <div class="card dr m-2" style="width: 18rem;">
+          </div></div>
+          <div class="col-sm-6 col-md-4 col-lg-3"><div class="card dr m-2">
             <img src="images/kadın-doktor.jpg" class="card-img-top img" alt="...">
             <div class="card-body">
               <h5 class="card-title">Ayşe Deniz</h5>
               <p class="card-text">BOĞAZİÇİ ÜNİVERSİTESİ - Psikoloji</p>
-              <a href="#" class="btn btn-primary" style="float:right;">Profile Git</a>
+              <a href="#" class="btn btn-warning" style="float:right;">Profile Git</a>
             </div>
-          </div>
-          <div class="card dr m-2" style="width: 18rem;">
+          </div></div>
+          <div class="col-sm-6 col-md-4 col-lg-3"><div class="card dr m-2">
             <img src="images/erkek-doktor.jpg" class="card-img-top img" alt="...">
             <div class="card-body">
               <h5 class="card-title">Mehmet Koç</h5>
               <p class="card-text">BİLKENT ÜNİVERSİTESİ - Psikoloji</p>
-              <a href="#" class="btn btn-primary" style="float:right;">Profile Git</a>
+              <a href="#" class="btn btn-warning" style="float:right;">Profile Git</a>
             </div>
-          </div>
-        <div class="card dr m-2" style="width: 18rem;">
+          </div></div>
+          <div class="col-sm-6 col-md-4 col-lg-3"><div class="card dr m-2">
             <img src="images/kadın-doktor.jpg" class="card-img-top img" alt="...">
             <div class="card-body">
               <h5 class="card-title">Ayşe Deniz</h5>
               <p class="card-text">BOĞAZİÇİ ÜNİVERSİTESİ - Psikoloji</p>
-              <a href="#" class="btn btn-primary" style="float:right;">Profile Git</a>
+              <a href="#" class="btn btn-warning" style="float:right;">Profile Git</a>
             </div>
-          </div>
-          <div class="card dr m-2" style="width: 18rem;">
+          </div></div>
+          <div class="col-sm-6 col-md-4 col-lg-3"><div class="card dr m-2">
             <img src="images/erkek-doktor.jpg" class="card-img-top img" alt="...">
             <div class="card-body">
               <h5 class="card-title">Mehmet Koç</h5>
               <p class="card-text">BİLKENT ÜNİVERSİTESİ - Psikoloji</p>
-              <a href="#" class="btn btn-primary" style="float:right;">Profile Git</a>
+              <a href="#" class="btn btn-warning" style="float:right;">Profile Git</a>
             </div>
-          </div>
-        
-    </div>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>
-</body>
+          </div></div>
+    </main>
 
+    <script src="bootstrap-5.2.2-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="app.js"></script>
+  </body>
 </html>
