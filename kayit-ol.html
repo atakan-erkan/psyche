@@ -1,622 +1,907 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="bootstrap-5.2.2-dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" 
-      integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" 
-          crossorigin="anonymous" referrerpolicy="no-referrer">
-    <script src="bootstrap-5.2.2-dist/js/bootstrap.bundle.min.js"></script>
+    <link
+      rel="canonical"
+      href="https://getbootstrap.com/docs/5.2/examples/sidebars/"
+    />
+    <link href="bootstrap-5.2.2-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+      integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
     <title>PSYCHE | Psikolojik Destek ve Yardım Sitesi</title>
     <style>
-      .navbar{
-    background-color: rgb(50, 190, 180);
-    font-size: 17px;
-    font-weight: 400;
-}
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        height: 3rem;
+        background-color: rgba(0, 0, 0, 0.1);
+        border: solid rgba(0, 0, 0, 0.15);
+        border-width: 1px 0;
+        box-shadow: inset 0 0.5em 1.5em rgba(0, 0, 0, 0.1),
+          inset 0 0.125em 0.5em rgba(0, 0, 0, 0.15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -0.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
     </style>
-</head>
-
-<body>
-    <nav class="navbar navbar-expand-lg navbar-light">
-        <i class="fa-solid fa-stethoscope fa-2x p-1"> <a class="navbar-brand" href="index.html">p s y c h e </a> </i>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="index.html">Anasayfa <span class="sr-only">(current)</span></a
-            >
-          </li>
-          <li class="nav-item
-          ">
-            <a class="nav-link" href="psikoloji.html">Psikoloji</a>
-                </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Doktorlar
-                  </a>
-                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="doktorlar.html">Doktorlarımız</a>
-                  </div>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="hakkımızda.html">Hakkımızda</a>
-                </li>
-            </ul>
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="giris.html">Giriş Yap</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Kayıt Ol
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="d-flex flex-nowrap">
+      <div class="d-flex flex-column flex-shrink-0 p-3 dark main-navbar">
+        <i class="fa-solid fa-stethoscope fa-2x p-1 logo">
+          <a class="navbar-brand black" href="index.html">
+            <strong class="logo-text">p s y c h e</strong>
           </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="kayit-ol.html">Hasta Kayıt</a>
-                        <a class="dropdown-item" href="doktor-kayit.html">Doktor Kayıt</a>
-
+        </i>
+        <hr class="black" />
+        <ul class="nav nav-pills flex-column mb-auto">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link black link">
+              <i class="fa-sharp fa-solid fa-house-chimney pe-2"></i>
+              <strong>Ana Sayfa</strong>
+            </a>
+          </li>
+          <li>
+            <a href="psikoloji.html" class="nav-link black link">
+              <i class="fa-solid fa-brain pe-2"></i>
+              <strong>Psikoloji</strong>
+            </a>
+          </li>
+          <li>
+            <div class="dropdown">
+              <a
+                href="#"
+                class="nav-link dropdown-toggle black link"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                ><i class="fa-solid fa-user-doctor pe-2"></i>
+                <strong>Doktorlar</strong>
+              </a>
+              <ul class="dropdown-menu dropdown-dark text-small shadow">
+                <li>
+                  <a class="dropdown-item" href="doktorlar.html"
+                    >Doktorlarımız</a
+                  >
                 </li>
-            </ul>
-            <form class="d-flex p-1">
-                <input class="form-control me-2" type="search" placeholder="Ara" aria-label="Search" />
-                <button class="btn btn-outline-dark ms-auto" type="submit">Ara</button>
-            </form>
+                <li>
+                  <a class="dropdown-item" href="#">Doktorların Paylaşımları</a>
+                </li>
+              </ul>
             </div>
-    </nav>
-    <div class="container">
-      <div class="col-md-6">
-          <form action="">
+          </li>
+          <li>
+            <div class="dropdown">
+              <a
+                href="#"
+                class="nav-link dropdown-toggle black link"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                ><i class="fa-solid fa-share pe-2"></i>
+                <strong>Paylaşımlar</strong>
+              </a>
+              <ul class="dropdown-menu dropdown-dark text-small shadow">
+                <li>
+                  <a class="dropdown-item" href="#">Kullanıcı Paylaşımları</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">Doktorların Paylaşımları</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">Tavsiye Paylaşımlar</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <a href="#" class="nav-link black link">
+              <i class="fa-solid fa-bell pe-2"></i>
+              <strong>Bildirimler</strong>
+            </a>
+          </li>
+        </ul>
+        <hr class="black" />
+        <div class="dropdown">
+          <a
+            href="#"
+            class="d-flex align-items-center black text-decoration-none dropdown-toggle"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <img
+              src="images/profil.jpg"
+              alt=""
+              width="32"
+              height="32"
+              class="rounded-circle me-2"
+            />
+            <strong class="ps-2">Kullanıcı</strong>
+          </a>
+          <ul class="dropdown-menu dropdown-dark text-small shadow">
+            <li><a class="dropdown-item" href="#">Geçmiş Sorularım</a></li>
+            <li><a class="dropdown-item" href="#">Ayarlar</a></li>
+            <li><a class="dropdown-item" href="#">Profil</a></li>
+            <li><hr class="dropdown-divider" /></li>
+            <li><a class="dropdown-item" href="#">Çıkış Yap</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="container-fluid scrollarea container-bg">
+        <div class="row">
+          <div class="col-sm-9 mt-5">
+            <form action="">
               <h2>Hesap Bilgileriniz</h2>
               <div class="form-group">
-                  <label for="email">Eposta:</label>
-                  <input type="email" class="form-control" id="email" placeholder="Eposta giriniz." />
+                <label for="email">Eposta:</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  placeholder="Eposta giriniz."
+                />
               </div>
               <div class="form-group">
-                  <label for="password">Parola:</label>
-                  <input type="password" class="form-control" id="password" placeholder="Parola giriniz." />
+                <label for="password">Parola:</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="password"
+                  placeholder="Parola giriniz."
+                />
               </div>
               <h2>Kişisel Bilgileriniz</h2>
               <div class="form-group">
-                  <label for="firstName">Adınız:</label>
-                  <input type="text" class="form-control" id="firstName" placeholder="Adınızı giriniz." />
+                <label for="firstName">Adınız:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="firstName"
+                  placeholder="Adınızı giriniz."
+                />
               </div>
               <div class="form-group">
-                  <label for="lastName">Soyadınız:</label>
-                  <input type="text" class="form-control" id="lastName" placeholder="Soyadınızı giriniz." />
+                <label for="lastName">Soyadınız:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="lastName"
+                  placeholder="Soyadınızı giriniz."
+                />
               </div>
               <div class="form-group">
-                  <label for="city">Şehir:</label>
-                  <select class="form-control" id="city">
-            <option value="0">Seçiniz</option>
-            <option value="1">Adana</option>
-            <option value="2">Adıyaman</option>
-            <option value="3">Afyonkarahisar</option>
-            <option value="4">Ağrı</option>
-            <option value="5">Amasya</option>
-            <option value="6">Ankara</option>
-            <option value="7">Antalya</option>
-            <option value="8">Artvin</option>
-            <option value="9">Aydın</option>
-            <option value="10">Balıkesir</option>
-            <option value="11">Bilecik</option>
-            <option value="12">Bingöl</option>
-            <option value="13">Bitlis</option>
-            <option value="14">Bolu</option>
-            <option value="15">Burdur</option>
-            <option value="16">Bursa</option>
-            <option value="17">Çanakkale</option>
-            <option value="18">Çankırı</option>
-            <option value="19">Çorum</option>
-            <option value="20">Denizli</option>
-            <option value="21">Diyarbakır</option>
-            <option value="22">Edirne</option>
-            <option value="23">Elazığ</option>
-            <option value="24">Erzincan</option>
-            <option value="25">Erzurum</option>
-            <option value="26">Eskişehir</option>
-            <option value="27">Gaziantep</option>
-            <option value="28">Giresun</option>
-            <option value="29">Gümüşhane</option>
-            <option value="30">Hakkâri</option>
-            <option value="31">Hatay</option>
-            <option value="32">Isparta</option>
-            <option value="33">Mersin</option>
-            <option value="34">İstanbul</option>
-            <option value="35">İzmir</option>
-            <option value="36">Kars</option>
-            <option value="37">Kastamonu</option>
-            <option value="38">Kayseri</option>
-            <option value="39">Kırklareli</option>
-            <option value="40">Kırşehir</option>
-            <option value="41">Kocaeli</option>
-            <option value="42">Konya</option>
-            <option value="43">Kütahya</option>
-            <option value="44">Malatya</option>
-            <option value="45">Manisa</option>
-            <option value="46">Kahramanmaraş</option>
-            <option value="47">Mardin</option>
-            <option value="48">Muğla</option>
-            <option value="49">Muş</option>
-            <option value="50">Nevşehir</option>
-            <option value="51">Niğde</option>
-            <option value="52">Ordu</option>
-            <option value="53">Rize</option>
-            <option value="54">Sakarya</option>
-            <option value="55">Samsun</option>
-            <option value="56">Siirt</option>
-            <option value="57">Sinop</option>
-            <option value="58">Sivas</option>
-            <option value="59">Tekirdağ</option>
-            <option value="60">Tokat</option>
-            <option value="61">Trabzon</option>
-            <option value="62">Tunceli</option>
-            <option value="63">Şanlıurfa</option>
-            <option value="64">Uşak</option>
-            <option value="65">Van</option>
-            <option value="66">Yozgat</option>
-            <option value="67">Zonguldak</option>
-            <option value="68">Aksaray</option>
-            <option value="69">Bayburt</option>
-            <option value="70">Karaman</option>
-            <option value="71">Kırıkkale</option>
-            <option value="72">Batman</option>
-            <option value="73">Şırnak</option>
-            <option value="74">Bartın</option>
-            <option value="75">Ardahan</option>
-            <option value="76">Iğdır</option>
-            <option value="77">Yalova</option>
-            <option value="78">Karabük</option>
-            <option value="79">Kilis</option>
-            <option value="80">Osmaniye</option>
-            <option value="81">Düzce</option>
-          </select>
+                <label for="city">Şehir:</label>
+                <select class="form-control" id="city">
+                  <option value="0">Seçiniz</option>
+                  <option value="1">Adana</option>
+                  <option value="2">Adıyaman</option>
+                  <option value="3">Afyonkarahisar</option>
+                  <option value="4">Ağrı</option>
+                  <option value="5">Amasya</option>
+                  <option value="6">Ankara</option>
+                  <option value="7">Antalya</option>
+                  <option value="8">Artvin</option>
+                  <option value="9">Aydın</option>
+                  <option value="10">Balıkesir</option>
+                  <option value="11">Bilecik</option>
+                  <option value="12">Bingöl</option>
+                  <option value="13">Bitlis</option>
+                  <option value="14">Bolu</option>
+                  <option value="15">Burdur</option>
+                  <option value="16">Bursa</option>
+                  <option value="17">Çanakkale</option>
+                  <option value="18">Çankırı</option>
+                  <option value="19">Çorum</option>
+                  <option value="20">Denizli</option>
+                  <option value="21">Diyarbakır</option>
+                  <option value="22">Edirne</option>
+                  <option value="23">Elazığ</option>
+                  <option value="24">Erzincan</option>
+                  <option value="25">Erzurum</option>
+                  <option value="26">Eskişehir</option>
+                  <option value="27">Gaziantep</option>
+                  <option value="28">Giresun</option>
+                  <option value="29">Gümüşhane</option>
+                  <option value="30">Hakkâri</option>
+                  <option value="31">Hatay</option>
+                  <option value="32">Isparta</option>
+                  <option value="33">Mersin</option>
+                  <option value="34">İstanbul</option>
+                  <option value="35">İzmir</option>
+                  <option value="36">Kars</option>
+                  <option value="37">Kastamonu</option>
+                  <option value="38">Kayseri</option>
+                  <option value="39">Kırklareli</option>
+                  <option value="40">Kırşehir</option>
+                  <option value="41">Kocaeli</option>
+                  <option value="42">Konya</option>
+                  <option value="43">Kütahya</option>
+                  <option value="44">Malatya</option>
+                  <option value="45">Manisa</option>
+                  <option value="46">Kahramanmaraş</option>
+                  <option value="47">Mardin</option>
+                  <option value="48">Muğla</option>
+                  <option value="49">Muş</option>
+                  <option value="50">Nevşehir</option>
+                  <option value="51">Niğde</option>
+                  <option value="52">Ordu</option>
+                  <option value="53">Rize</option>
+                  <option value="54">Sakarya</option>
+                  <option value="55">Samsun</option>
+                  <option value="56">Siirt</option>
+                  <option value="57">Sinop</option>
+                  <option value="58">Sivas</option>
+                  <option value="59">Tekirdağ</option>
+                  <option value="60">Tokat</option>
+                  <option value="61">Trabzon</option>
+                  <option value="62">Tunceli</option>
+                  <option value="63">Şanlıurfa</option>
+                  <option value="64">Uşak</option>
+                  <option value="65">Van</option>
+                  <option value="66">Yozgat</option>
+                  <option value="67">Zonguldak</option>
+                  <option value="68">Aksaray</option>
+                  <option value="69">Bayburt</option>
+                  <option value="70">Karaman</option>
+                  <option value="71">Kırıkkale</option>
+                  <option value="72">Batman</option>
+                  <option value="73">Şırnak</option>
+                  <option value="74">Bartın</option>
+                  <option value="75">Ardahan</option>
+                  <option value="76">Iğdır</option>
+                  <option value="77">Yalova</option>
+                  <option value="78">Karabük</option>
+                  <option value="79">Kilis</option>
+                  <option value="80">Osmaniye</option>
+                  <option value="81">Düzce</option>
+                </select>
               </div>
               <div class="form-group">
-                  <label for="university">Üniversite:</label>
-                  <select class="form-control" id="university">
-            <option value="0">Seçiniz</option>
-            <option value="Abant İzzet Baysal Üniversitesi">
-              Abant İzzet Baysal Üniversitesi
-            </option>
-            <option value="Abdullah Gül Üniversitesi">
-              Abdullah Gül Üniversitesi
-            </option>
-            <option value="Acıbadem Üniversitesi">
-              Acıbadem Üniversitesi
-            </option>
-            <option value="Adana Bilim ve Teknoloji Üniversitesi">
-              Adana Bilim ve Teknoloji Üniversitesi
-            </option>
-            <option value="Adnan Menderes Üniversitesi">
-              Adnan Menderes Üniversitesi
-            </option>
-            <option value="Adıyaman Üniversitesi">
-              Adıyaman Üniversitesi
-            </option>
-            <option value="Afyon Kocatepe Üniversitesi">
-              Afyon Kocatepe Üniversitesi
-            </option>
-            <option value="Ahi Evran Üniversitesi">
-              Ahi Evran Üniversitesi
-            </option>
-            <option value="Akdeniz Üniversitesi">Akdeniz Üniversitesi</option>
-            <option value="Akev Üniversitesi">Akev Üniversitesi</option>
-            <option value="Aksaray Üniversitesi">Aksaray Üniversitesi</option>
-            <option value="Alanya Alaaddin Keykubat Üniversitesi">
-              Alanya Alaaddin Keykubat Üniversitesi
-            </option>
-            <option value="Alanya Hamdullah Emin Paşa Üniversitesi">
-              Alanya Hamdullah Emin Paşa Üniversitesi
-            </option>
-            <option value="Amasya Üniversitesi">Amasya Üniversitesi</option>
-            <option value="Anadolu Üniversitesi">Anadolu Üniversitesi</option>
-            <option value="Anka Teknoloji Üniversitesi">
-              Anka Teknoloji Üniversitesi
-            </option>
-            <option value="Ankara Sosyal Bilimler Üniversitesi">
-              Ankara Sosyal Bilimler Üniversitesi
-            </option>
-            <option value="Ankara Üniversitesi">Ankara Üniversitesi</option>
-            <option value="Ardahan Üniversitesi">Ardahan Üniversitesi</option>
-            <option value="Artvin Çoruh Üniversitesi">
-              Artvin Çoruh Üniversitesi
-            </option>
-            <option value="Atatürk Üniversitesi">Atatürk Üniversitesi</option>
-            <option value="Atılım Üniversitesi">Atılım Üniversitesi</option>
-            <option value="Avrasya Üniversitesi">Avrasya Üniversitesi</option>
-            <option value="Ağrı İbrahim Çeçen Üniversitesi">
-              Ağrı İbrahim Çeçen Üniversitesi
-            </option>
-            <option value="Bahçeşehir Üniversitesi">
-              Bahçeşehir Üniversitesi
-            </option>
-            <option value="Balıkesir Üniversitesi">
-              Balıkesir Üniversitesi
-            </option>
-            <option value="Bandırma Onyedi Eylül Üniversitesi">
-              Bandırma Onyedi Eylül Üniversitesi
-            </option>
-            <option value="Bartın Üniversitesi">Bartın Üniversitesi</option>
-            <option value="Batman Üniversitesi">Batman Üniversitesi</option>
-            <option value="Bayburt Üniversitesi">Bayburt Üniversitesi</option>
-            <option value="Başkent Üniversitesi">Başkent Üniversitesi</option>
-            <option value="Beykent Üniversitesi">Beykent Üniversitesi</option>
-            <option value="Bezmiâlem Vakıf Üniversitesi">
-              Bezmiâlem Vakıf Üniversitesi
-            </option>
-            <option value="Bilecik Şeyh Edebali Üniversitesi">
-              Bilecik Şeyh Edebali Üniversitesi
-            </option>
-            <option value="Bilkent Üniversitesi">Bilkent Üniversitesi</option>
-            <option value="Bingöl Üniversitesi">Bingöl Üniversitesi</option>
-            <option value="Biruni Üniversitesi">Biruni Üniversitesi</option>
-            <option value="Bitlis Eren Üniversitesi">
-              Bitlis Eren Üniversitesi
-            </option>
-            <option value="Bozok Üniversitesi">Bozok Üniversitesi</option>
-            <option value="Boğaziçi Üniversitesi">
-              Boğaziçi Üniversitesi
-            </option>
-            <option value="Bursa Orhangazi Üniversitesi">
-              Bursa Orhangazi Üniversitesi
-            </option>
-            <option value="Bursa Teknik Üniversitesi">
-              Bursa Teknik Üniversitesi
-            </option>
-            <option value="Bülent Ecevit Üniversitesi">
-              Bülent Ecevit Üniversitesi
-            </option>
-            <option value="Canik Başarı Üniversitesi">
-              Canik Başarı Üniversitesi
-            </option>
-            <option value="Celal Bayar Üniversitesi">
-              Celal Bayar Üniversitesi
-            </option>
-            <option value="Cumhuriyet Üniversitesi">
-              Cumhuriyet Üniversitesi
-            </option>
-            <option value="Çanakkale Onsekiz Mart Üniversitesi">
-              Çanakkale Onsekiz Mart Üniversitesi
-            </option>
-            <option value="Çankaya Üniversitesi">Çankaya Üniversitesi</option>
-            <option value="Çankırı Karatekin Üniversitesi">
-              Çankırı Karatekin Üniversitesi
-            </option>
-            <option value="Çağ Üniversitesi">Çağ Üniversitesi</option>
-            <option value="Çukurova Üniversitesi">
-              Çukurova Üniversitesi
-            </option>
-            <option value="Deniz Harp Okulu">Deniz Harp Okulu</option>
-            <option value="Dicle Üniversitesi">Dicle Üniversitesi</option>
-            <option value="Dokuz Eylül Üniversitesi">
-              Dokuz Eylül Üniversitesi
-            </option>
-            <option value="Doğuş Üniversitesi">Doğuş Üniversitesi</option>
-            <option value="Dumlupınar Üniversitesi">
-              Dumlupınar Üniversitesi
-            </option>
-            <option value="Düzce Üniversitesi">Düzce Üniversitesi</option>
-            <option value="Ege Üniversitesi">Ege Üniversitesi</option>
-            <option value="Erciyes Üniversitesi">Erciyes Üniversitesi</option>
-            <option value="Erzincan Üniversitesi">
-              Erzincan Üniversitesi
-            </option>
-            <option value="Erzurum Teknik Üniversitesi">
-              Erzurum Teknik Üniversitesi
-            </option>
-            <option value="Eskişehir Osmangazi Üniversitesi">
-              Eskişehir Osmangazi Üniversitesi
-            </option>
-            <option value="Fatih Sultan Mehmet Üniversitesi">
-              Fatih Sultan Mehmet Üniversitesi
-            </option>
-            <option value="Fatih Üniversitesi">Fatih Üniversitesi</option>
-            <option value="Fırat Üniversitesi">Fırat Üniversitesi</option>
-            <option value="Galatasaray Üniversitesi">
-              Galatasaray Üniversitesi
-            </option>
-            <option value="Gazi Üniversitesi">Gazi Üniversitesi</option>
-            <option value="Gaziantep Üniversitesi">
-              Gaziantep Üniversitesi
-            </option>
-            <option value="Gaziosmanpaşa Üniversitesi">
-              Gaziosmanpaşa Üniversitesi
-            </option>
-            <option value="Gebze Teknik Üniversitesi">
-              Gebze Teknik Üniversitesi
-            </option>
-            <option value="Gedik Üniversitesi">Gedik Üniversitesi</option>
-            <option value="Gediz Üniversitesi">Gediz Üniversitesi</option>
-            <option value="Giresun Üniversitesi">Giresun Üniversitesi</option>
-            <option value="Gülhane Askeri Tıp Akademisi">
-              Gülhane Askeri Tıp Akademisi
-            </option>
-            <option value="Gümüşhane Üniversitesi">
-              Gümüşhane Üniversitesi
-            </option>
-            <option value="Hacettepe Üniversitesi">
-              Hacettepe Üniversitesi
-            </option>
-            <option value="Hakkari Üniversitesi">Hakkari Üniversitesi</option>
-            <option value="Haliç Üniversitesi">Haliç Üniversitesi</option>
-            <option value="Harran Üniversitesi">Harran Üniversitesi</option>
-            <option value="Hasan Kalyoncu Üniversitesi">
-              Hasan Kalyoncu Üniversitesi
-            </option>
-            <option value="Hava Harp Okulu">Hava Harp Okulu</option>
-            <option value="Hitit Üniversitesi">Hitit Üniversitesi</option>
-            <option value="Iğdır Üniversitesi">Iğdır Üniversitesi</option>
-            <option value="Işık Üniversitesi">Işık Üniversitesi</option>
-            <option value="Kadir Has Üniversitesi">
-              Kadir Has Üniversitesi
-            </option>
-            <option value="Kafkas Üniversitesi">Kafkas Üniversitesi</option>
-            <option value="Kahramanmaraş Sütçü İmam Üniversitesi">
-              Kahramanmaraş Sütçü İmam Üniversitesi
-            </option>
-            <option value="Kanuni Üniversitesi">Kanuni Üniversitesi</option>
-            <option value="Kara Harp Okulu">Kara Harp Okulu</option>
-            <option value="Karabük Üniversitesi">Karabük Üniversitesi</option>
-            <option value="Karadeniz Teknik Üniversitesi">
-              Karadeniz Teknik Üniversitesi
-            </option>
-            <option value="Karamanoğlu Mehmetbey Üniversitesi">
-              Karamanoğlu Mehmetbey Üniversitesi
-            </option>
-            <option value="Karatay Üniversitesi">Karatay Üniversitesi</option>
-            <option value="Kastamonu Üniversitesi">
-              Kastamonu Üniversitesi
-            </option>
-            <option value="Kilis 7 Aralık Üniversitesi">
-              Kilis 7 Aralık Üniversitesi
-            </option>
-            <option value="Kocaeli Üniversitesi">Kocaeli Üniversitesi</option>
-            <option value="Konya Gıda Tarım Üniversitesi">
-              Konya Gıda Tarım Üniversitesi
-            </option>
-            <option value="Koç Üniversitesi">Koç Üniversitesi</option>
-            <option value="Kırklareli Üniversitesi">
-              Kırklareli Üniversitesi
-            </option>
-            <option value="Kırıkkale Üniversitesi">
-              Kırıkkale Üniversitesi
-            </option>
-            <option value="MEF Üniversitesi">MEF Üniversitesi</option>
-            <option value="Maltepe Üniversitesi">Maltepe Üniversitesi</option>
-            <option value="Mardin Artuklu Üniversitesi">
-              Mardin Artuklu Üniversitesi
-            </option>
-            <option value="Marmara Üniversitesi">Marmara Üniversitesi</option>
-            <option value="Mehmet Akif Ersoy Üniversitesi">
-              Mehmet Akif Ersoy Üniversitesi
-            </option>
-            <option value="Melikşah Üniversitesi">
-              Melikşah Üniversitesi
-            </option>
-            <option value="Mersin Üniversitesi">Mersin Üniversitesi</option>
-            <option value="Mevlana Üniversitesi">Mevlana Üniversitesi</option>
-            <option value="Mimar Sinan Güzel Sanatlar Üniversitesi">
-              Mimar Sinan Güzel Sanatlar Üniversitesi
-            </option>
-            <option value="Murat Hüdavendigar Üniversitesi">
-              Murat Hüdavendigar Üniversitesi
-            </option>
-            <option value="Mustafa Kemal Üniversitesi">
-              Mustafa Kemal Üniversitesi
-            </option>
-            <option value="Muğla Sıtkı Koçman Üniversitesi">
-              Muğla Sıtkı Koçman Üniversitesi
-            </option>
-            <option value="Muş Alparslan Üniversitesi">
-              Muş Alparslan Üniversitesi
-            </option>
-            <option value="Namık Kemal Üniversitesi">
-              Namık Kemal Üniversitesi
-            </option>
-            <option value="Necmettin Erbakan Üniversitesi**">
-              Necmettin Erbakan Üniversitesi**
-            </option>
-            <option value="Nevşehir Hacı Bektaş Veli Üniversitesi">
-              Nevşehir Hacı Bektaş Veli Üniversitesi
-            </option>
-            <option value="Niğde Üniversitesi">Niğde Üniversitesi</option>
-            <option value="Nişantaşı Üniversitesi">
-              Nişantaşı Üniversitesi
-            </option>
-            <option value="Nuh Naci Yazgan Üniversitesi">
-              Nuh Naci Yazgan Üniversitesi
-            </option>
-            <option value="İbn-u Haldun Üniversitesi">
-              İbn-u Haldun Üniversitesi
-            </option>
-            <option value="İnönü Üniversitesi">İnönü Üniversitesi</option>
-            <option value="İpek Üniversitesi**">İpek Üniversitesi**</option>
-            <option value="İskenderun Teknik Üniversitesi">
-              İskenderun Teknik Üniversitesi
-            </option>
-            <option value="İstanbul 29 Mayıs Üniversitesi">
-              İstanbul 29 Mayıs Üniversitesi
-            </option>
-            <option value="İstanbul Arel Üniversitesi">
-              İstanbul Arel Üniversitesi
-            </option>
-            <option value="İstanbul Aydın Üniversitesi">
-              İstanbul Aydın Üniversitesi
-            </option>
-            <option value="İstanbul Bilgi Üniversitesi">
-              İstanbul Bilgi Üniversitesi
-            </option>
-            <option value="İstanbul Bilim Üniversitesi">
-              İstanbul Bilim Üniversitesi
-            </option>
-            <option value="İstanbul Esenyurt Üniversitesi">
-              İstanbul Esenyurt Üniversitesi
-            </option>
-            <option value="İstanbul Gelişim Üniversitesi">
-              İstanbul Gelişim Üniversitesi
-            </option>
-            <option value="İstanbul Kemerburgaz Üniversitesi">
-              İstanbul Kemerburgaz Üniversitesi
-            </option>
-            <option value="İstanbul Kültür Üniversitesi">
-              İstanbul Kültür Üniversitesi
-            </option>
-            <option value="İstanbul Medeniyet Üniversitesi">
-              İstanbul Medeniyet Üniversitesi
-            </option>
-            <option value="İstanbul Medipol Üniversitesi">
-              İstanbul Medipol Üniversitesi
-            </option>
-            <option value="İstanbul Rumeli Üniversitesi">
-              İstanbul Rumeli Üniversitesi
-            </option>
-            <option value="İstanbul Sabahattin Zaim Üniversitesi">
-              İstanbul Sabahattin Zaim Üniversitesi
-            </option>
-            <option value="İstanbul Teknik Üniversitesi">
-              İstanbul Teknik Üniversitesi
-            </option>
-            <option value="İstanbul Ticaret Üniversitesi">
-              İstanbul Ticaret Üniversitesi
-            </option>
-            <option value="İstanbul Üniversitesi">
-              İstanbul Üniversitesi
-            </option>
-            <option value="İstanbul Şehir Üniversitesi">
-              İstanbul Şehir Üniversitesi
-            </option>
-            <option value="İstinye Üniversitesi">İstinye Üniversitesi</option>
-            <option value="İzmir Ekonomi Üniversitesi">
-              İzmir Ekonomi Üniversitesi
-            </option>
-            <option value="İzmir Kâtip Çelebi Üniversitesi">
-              İzmir Kâtip Çelebi Üniversitesi
-            </option>
-            <option value="İzmir Yüksek Teknoloji Enstitüsü">
-              İzmir Yüksek Teknoloji Enstitüsü
-            </option>
-            <option value="İzmir Üniversitesi">İzmir Üniversitesi</option>
-            <option value="Okan Üniversitesi">Okan Üniversitesi</option>
-            <option value="Ondokuz Mayıs Üniversitesi">
-              Ondokuz Mayıs Üniversitesi
-            </option>
-            <option value="Ordu Üniversitesi">Ordu Üniversitesi</option>
-            <option value="Orta Doğu Teknik Üniversitesi">
-              Orta Doğu Teknik Üniversitesi
-            </option>
-            <option value="Osmaniye Korkut Ata Üniversitesi">
-              Osmaniye Korkut Ata Üniversitesi
-            </option>
-            <option value="Özyeğin Üniversitesi">Özyeğin Üniversitesi</option>
-            <option value="Pamukkale Üniversitesi">
-              Pamukkale Üniversitesi
-            </option>
-            <option value="Piri Reis Üniversitesi">
-              Piri Reis Üniversitesi
-            </option>
-            <option value="Polis Akademisi">Polis Akademisi</option>
-            <option value="Recep Tayyip Erdoğan Üniversitesi">
-              Recep Tayyip Erdoğan Üniversitesi
-            </option>
-            <option value="Sabancı Üniversitesi">Sabancı Üniversitesi</option>
-            <option value="Sakarya Üniversitesi">Sakarya Üniversitesi</option>
-            <option value="Sanko Üniversitesi">Sanko Üniversitesi</option>
-            <option value="Sağlık Bilimleri Üniversitesi">
-              Sağlık Bilimleri Üniversitesi
-            </option>
-            <option value="Selahattin Eyyubi Üniversitesi">
-              Selahattin Eyyubi Üniversitesi
-            </option>
-            <option value="Selçuk Üniversitesi">Selçuk Üniversitesi</option>
-            <option value="Siirt Üniversitesi">Siirt Üniversitesi</option>
-            <option value="Sinop Üniversitesi">Sinop Üniversitesi</option>
-            <option value="Süleyman Demirel Üniversitesi">
-              Süleyman Demirel Üniversitesi
-            </option>
-            <option value="Süleyman Şah Üniversitesi">
-              Süleyman Şah Üniversitesi
-            </option>
-            <option value="Şifa Üniversitesi">Şifa Üniversitesi</option>
-            <option value="Şırnak Üniversitesi">Şırnak Üniversitesi</option>
-            <option value="TED Üniversitesi">TED Üniversitesi</option>
-            <option value="TOBB Ekonomi ve Teknoloji Üniversitesi">
-              TOBB Ekonomi ve Teknoloji Üniversitesi
-            </option>
-            <option value="Toros Üniversitesi">Toros Üniversitesi</option>
-            <option value="Trakya Üniversitesi">Trakya Üniversitesi</option>
-            <option value="Tunceli Üniversitesi">Tunceli Üniversitesi</option>
-            <option value="Turgut Özal Üniversitesi">
-              Turgut Özal Üniversitesi
-            </option>
-            <option value="Türk Alman Üniversitesi">
-              Türk Alman Üniversitesi
-            </option>
-            <option value="Türk Hava Kurumu Üniversitesi">
-              Türk Hava Kurumu Üniversitesi
-            </option>
-            <option
-              value="Türkiye Uluslararası İslam, Bilim ve Teknoloji Üniversitesi"
-            >
-              Türkiye Uluslararası İslam, Bilim ve Teknoloji Üniversitesi
-            </option>
-            <option value="Ufuk Üniversitesi">Ufuk Üniversitesi</option>
-            <option value="Uludağ Üniversitesi">Uludağ Üniversitesi</option>
-            <option value="Uluslararası Antalya Üniversitesi">
-              Uluslararası Antalya Üniversitesi
-            </option>
-            <option value="Uşak Üniversitesi">Uşak Üniversitesi</option>
-            <option value="Üsküdar Üniversitesi">Üsküdar Üniversitesi</option>
-            <option value="Yalova Üniversitesi">Yalova Üniversitesi</option>
-            <option value="Yaşar Üniversitesi">Yaşar Üniversitesi</option>
-            <option value="Yeditepe Üniversitesi">
-              Yeditepe Üniversitesi
-            </option>
-            <option value="Yeni Yüzyıl Üniversitesi">
-              Yeni Yüzyıl Üniversitesi
-            </option>
-            <option value="Yüksek İhtisas Üniversitesi**">
-              Yüksek İhtisas Üniversitesi**
-            </option>
-            <option value="Yüzüncü Yıl Üniversitesi">
-              Yüzüncü Yıl Üniversitesi
-            </option>
-            <option value="Yıldırım Beyazıt Üniversitesi">
-              Yıldırım Beyazıt Üniversitesi
-            </option>
-            <option value="Yıldız Teknik Üniversitesi">
-              Yıldız Teknik Üniversitesi
-            </option>
-            <option value="Zirve Üniversitesi">Zirve Üniversitesi</option>
-          </select>
+                <label for="university">Üniversite:</label>
+                <select class="form-control" id="university">
+                  <option value="0">Seçiniz</option>
+                  <option value="Abant İzzet Baysal Üniversitesi">
+                    Abant İzzet Baysal Üniversitesi
+                  </option>
+                  <option value="Abdullah Gül Üniversitesi">
+                    Abdullah Gül Üniversitesi
+                  </option>
+                  <option value="Acıbadem Üniversitesi">
+                    Acıbadem Üniversitesi
+                  </option>
+                  <option value="Adana Bilim ve Teknoloji Üniversitesi">
+                    Adana Bilim ve Teknoloji Üniversitesi
+                  </option>
+                  <option value="Adnan Menderes Üniversitesi">
+                    Adnan Menderes Üniversitesi
+                  </option>
+                  <option value="Adıyaman Üniversitesi">
+                    Adıyaman Üniversitesi
+                  </option>
+                  <option value="Afyon Kocatepe Üniversitesi">
+                    Afyon Kocatepe Üniversitesi
+                  </option>
+                  <option value="Ahi Evran Üniversitesi">
+                    Ahi Evran Üniversitesi
+                  </option>
+                  <option value="Akdeniz Üniversitesi">
+                    Akdeniz Üniversitesi
+                  </option>
+                  <option value="Akev Üniversitesi">Akev Üniversitesi</option>
+                  <option value="Aksaray Üniversitesi">
+                    Aksaray Üniversitesi
+                  </option>
+                  <option value="Alanya Alaaddin Keykubat Üniversitesi">
+                    Alanya Alaaddin Keykubat Üniversitesi
+                  </option>
+                  <option value="Alanya Hamdullah Emin Paşa Üniversitesi">
+                    Alanya Hamdullah Emin Paşa Üniversitesi
+                  </option>
+                  <option value="Amasya Üniversitesi">
+                    Amasya Üniversitesi
+                  </option>
+                  <option value="Anadolu Üniversitesi">
+                    Anadolu Üniversitesi
+                  </option>
+                  <option value="Anka Teknoloji Üniversitesi">
+                    Anka Teknoloji Üniversitesi
+                  </option>
+                  <option value="Ankara Sosyal Bilimler Üniversitesi">
+                    Ankara Sosyal Bilimler Üniversitesi
+                  </option>
+                  <option value="Ankara Üniversitesi">
+                    Ankara Üniversitesi
+                  </option>
+                  <option value="Ardahan Üniversitesi">
+                    Ardahan Üniversitesi
+                  </option>
+                  <option value="Artvin Çoruh Üniversitesi">
+                    Artvin Çoruh Üniversitesi
+                  </option>
+                  <option value="Atatürk Üniversitesi">
+                    Atatürk Üniversitesi
+                  </option>
+                  <option value="Atılım Üniversitesi">
+                    Atılım Üniversitesi
+                  </option>
+                  <option value="Avrasya Üniversitesi">
+                    Avrasya Üniversitesi
+                  </option>
+                  <option value="Ağrı İbrahim Çeçen Üniversitesi">
+                    Ağrı İbrahim Çeçen Üniversitesi
+                  </option>
+                  <option value="Bahçeşehir Üniversitesi">
+                    Bahçeşehir Üniversitesi
+                  </option>
+                  <option value="Balıkesir Üniversitesi">
+                    Balıkesir Üniversitesi
+                  </option>
+                  <option value="Bandırma Onyedi Eylül Üniversitesi">
+                    Bandırma Onyedi Eylül Üniversitesi
+                  </option>
+                  <option value="Bartın Üniversitesi">
+                    Bartın Üniversitesi
+                  </option>
+                  <option value="Batman Üniversitesi">
+                    Batman Üniversitesi
+                  </option>
+                  <option value="Bayburt Üniversitesi">
+                    Bayburt Üniversitesi
+                  </option>
+                  <option value="Başkent Üniversitesi">
+                    Başkent Üniversitesi
+                  </option>
+                  <option value="Beykent Üniversitesi">
+                    Beykent Üniversitesi
+                  </option>
+                  <option value="Bezmiâlem Vakıf Üniversitesi">
+                    Bezmiâlem Vakıf Üniversitesi
+                  </option>
+                  <option value="Bilecik Şeyh Edebali Üniversitesi">
+                    Bilecik Şeyh Edebali Üniversitesi
+                  </option>
+                  <option value="Bilkent Üniversitesi">
+                    Bilkent Üniversitesi
+                  </option>
+                  <option value="Bingöl Üniversitesi">
+                    Bingöl Üniversitesi
+                  </option>
+                  <option value="Biruni Üniversitesi">
+                    Biruni Üniversitesi
+                  </option>
+                  <option value="Bitlis Eren Üniversitesi">
+                    Bitlis Eren Üniversitesi
+                  </option>
+                  <option value="Bozok Üniversitesi">Bozok Üniversitesi</option>
+                  <option value="Boğaziçi Üniversitesi">
+                    Boğaziçi Üniversitesi
+                  </option>
+                  <option value="Bursa Orhangazi Üniversitesi">
+                    Bursa Orhangazi Üniversitesi
+                  </option>
+                  <option value="Bursa Teknik Üniversitesi">
+                    Bursa Teknik Üniversitesi
+                  </option>
+                  <option value="Bülent Ecevit Üniversitesi">
+                    Bülent Ecevit Üniversitesi
+                  </option>
+                  <option value="Canik Başarı Üniversitesi">
+                    Canik Başarı Üniversitesi
+                  </option>
+                  <option value="Celal Bayar Üniversitesi">
+                    Celal Bayar Üniversitesi
+                  </option>
+                  <option value="Cumhuriyet Üniversitesi">
+                    Cumhuriyet Üniversitesi
+                  </option>
+                  <option value="Çanakkale Onsekiz Mart Üniversitesi">
+                    Çanakkale Onsekiz Mart Üniversitesi
+                  </option>
+                  <option value="Çankaya Üniversitesi">
+                    Çankaya Üniversitesi
+                  </option>
+                  <option value="Çankırı Karatekin Üniversitesi">
+                    Çankırı Karatekin Üniversitesi
+                  </option>
+                  <option value="Çağ Üniversitesi">Çağ Üniversitesi</option>
+                  <option value="Çukurova Üniversitesi">
+                    Çukurova Üniversitesi
+                  </option>
+                  <option value="Deniz Harp Okulu">Deniz Harp Okulu</option>
+                  <option value="Dicle Üniversitesi">Dicle Üniversitesi</option>
+                  <option value="Dokuz Eylül Üniversitesi">
+                    Dokuz Eylül Üniversitesi
+                  </option>
+                  <option value="Doğuş Üniversitesi">Doğuş Üniversitesi</option>
+                  <option value="Dumlupınar Üniversitesi">
+                    Dumlupınar Üniversitesi
+                  </option>
+                  <option value="Düzce Üniversitesi">Düzce Üniversitesi</option>
+                  <option value="Ege Üniversitesi">Ege Üniversitesi</option>
+                  <option value="Erciyes Üniversitesi">
+                    Erciyes Üniversitesi
+                  </option>
+                  <option value="Erzincan Üniversitesi">
+                    Erzincan Üniversitesi
+                  </option>
+                  <option value="Erzurum Teknik Üniversitesi">
+                    Erzurum Teknik Üniversitesi
+                  </option>
+                  <option value="Eskişehir Osmangazi Üniversitesi">
+                    Eskişehir Osmangazi Üniversitesi
+                  </option>
+                  <option value="Fatih Sultan Mehmet Üniversitesi">
+                    Fatih Sultan Mehmet Üniversitesi
+                  </option>
+                  <option value="Fatih Üniversitesi">Fatih Üniversitesi</option>
+                  <option value="Fırat Üniversitesi">Fırat Üniversitesi</option>
+                  <option value="Galatasaray Üniversitesi">
+                    Galatasaray Üniversitesi
+                  </option>
+                  <option value="Gazi Üniversitesi">Gazi Üniversitesi</option>
+                  <option value="Gaziantep Üniversitesi">
+                    Gaziantep Üniversitesi
+                  </option>
+                  <option value="Gaziosmanpaşa Üniversitesi">
+                    Gaziosmanpaşa Üniversitesi
+                  </option>
+                  <option value="Gebze Teknik Üniversitesi">
+                    Gebze Teknik Üniversitesi
+                  </option>
+                  <option value="Gedik Üniversitesi">Gedik Üniversitesi</option>
+                  <option value="Gediz Üniversitesi">Gediz Üniversitesi</option>
+                  <option value="Giresun Üniversitesi">
+                    Giresun Üniversitesi
+                  </option>
+                  <option value="Gülhane Askeri Tıp Akademisi">
+                    Gülhane Askeri Tıp Akademisi
+                  </option>
+                  <option value="Gümüşhane Üniversitesi">
+                    Gümüşhane Üniversitesi
+                  </option>
+                  <option value="Hacettepe Üniversitesi">
+                    Hacettepe Üniversitesi
+                  </option>
+                  <option value="Hakkari Üniversitesi">
+                    Hakkari Üniversitesi
+                  </option>
+                  <option value="Haliç Üniversitesi">Haliç Üniversitesi</option>
+                  <option value="Harran Üniversitesi">
+                    Harran Üniversitesi
+                  </option>
+                  <option value="Hasan Kalyoncu Üniversitesi">
+                    Hasan Kalyoncu Üniversitesi
+                  </option>
+                  <option value="Hava Harp Okulu">Hava Harp Okulu</option>
+                  <option value="Hitit Üniversitesi">Hitit Üniversitesi</option>
+                  <option value="Iğdır Üniversitesi">Iğdır Üniversitesi</option>
+                  <option value="Işık Üniversitesi">Işık Üniversitesi</option>
+                  <option value="Kadir Has Üniversitesi">
+                    Kadir Has Üniversitesi
+                  </option>
+                  <option value="Kafkas Üniversitesi">
+                    Kafkas Üniversitesi
+                  </option>
+                  <option value="Kahramanmaraş Sütçü İmam Üniversitesi">
+                    Kahramanmaraş Sütçü İmam Üniversitesi
+                  </option>
+                  <option value="Kanuni Üniversitesi">
+                    Kanuni Üniversitesi
+                  </option>
+                  <option value="Kara Harp Okulu">Kara Harp Okulu</option>
+                  <option value="Karabük Üniversitesi">
+                    Karabük Üniversitesi
+                  </option>
+                  <option value="Karadeniz Teknik Üniversitesi">
+                    Karadeniz Teknik Üniversitesi
+                  </option>
+                  <option value="Karamanoğlu Mehmetbey Üniversitesi">
+                    Karamanoğlu Mehmetbey Üniversitesi
+                  </option>
+                  <option value="Karatay Üniversitesi">
+                    Karatay Üniversitesi
+                  </option>
+                  <option value="Kastamonu Üniversitesi">
+                    Kastamonu Üniversitesi
+                  </option>
+                  <option value="Kilis 7 Aralık Üniversitesi">
+                    Kilis 7 Aralık Üniversitesi
+                  </option>
+                  <option value="Kocaeli Üniversitesi">
+                    Kocaeli Üniversitesi
+                  </option>
+                  <option value="Konya Gıda Tarım Üniversitesi">
+                    Konya Gıda Tarım Üniversitesi
+                  </option>
+                  <option value="Koç Üniversitesi">Koç Üniversitesi</option>
+                  <option value="Kırklareli Üniversitesi">
+                    Kırklareli Üniversitesi
+                  </option>
+                  <option value="Kırıkkale Üniversitesi">
+                    Kırıkkale Üniversitesi
+                  </option>
+                  <option value="MEF Üniversitesi">MEF Üniversitesi</option>
+                  <option value="Maltepe Üniversitesi">
+                    Maltepe Üniversitesi
+                  </option>
+                  <option value="Mardin Artuklu Üniversitesi">
+                    Mardin Artuklu Üniversitesi
+                  </option>
+                  <option value="Marmara Üniversitesi">
+                    Marmara Üniversitesi
+                  </option>
+                  <option value="Mehmet Akif Ersoy Üniversitesi">
+                    Mehmet Akif Ersoy Üniversitesi
+                  </option>
+                  <option value="Melikşah Üniversitesi">
+                    Melikşah Üniversitesi
+                  </option>
+                  <option value="Mersin Üniversitesi">
+                    Mersin Üniversitesi
+                  </option>
+                  <option value="Mevlana Üniversitesi">
+                    Mevlana Üniversitesi
+                  </option>
+                  <option value="Mimar Sinan Güzel Sanatlar Üniversitesi">
+                    Mimar Sinan Güzel Sanatlar Üniversitesi
+                  </option>
+                  <option value="Murat Hüdavendigar Üniversitesi">
+                    Murat Hüdavendigar Üniversitesi
+                  </option>
+                  <option value="Mustafa Kemal Üniversitesi">
+                    Mustafa Kemal Üniversitesi
+                  </option>
+                  <option value="Muğla Sıtkı Koçman Üniversitesi">
+                    Muğla Sıtkı Koçman Üniversitesi
+                  </option>
+                  <option value="Muş Alparslan Üniversitesi">
+                    Muş Alparslan Üniversitesi
+                  </option>
+                  <option value="Namık Kemal Üniversitesi">
+                    Namık Kemal Üniversitesi
+                  </option>
+                  <option value="Necmettin Erbakan Üniversitesi**">
+                    Necmettin Erbakan Üniversitesi**
+                  </option>
+                  <option value="Nevşehir Hacı Bektaş Veli Üniversitesi">
+                    Nevşehir Hacı Bektaş Veli Üniversitesi
+                  </option>
+                  <option value="Niğde Üniversitesi">Niğde Üniversitesi</option>
+                  <option value="Nişantaşı Üniversitesi">
+                    Nişantaşı Üniversitesi
+                  </option>
+                  <option value="Nuh Naci Yazgan Üniversitesi">
+                    Nuh Naci Yazgan Üniversitesi
+                  </option>
+                  <option value="İbn-u Haldun Üniversitesi">
+                    İbn-u Haldun Üniversitesi
+                  </option>
+                  <option value="İnönü Üniversitesi">İnönü Üniversitesi</option>
+                  <option value="İpek Üniversitesi**">
+                    İpek Üniversitesi**
+                  </option>
+                  <option value="İskenderun Teknik Üniversitesi">
+                    İskenderun Teknik Üniversitesi
+                  </option>
+                  <option value="İstanbul 29 Mayıs Üniversitesi">
+                    İstanbul 29 Mayıs Üniversitesi
+                  </option>
+                  <option value="İstanbul Arel Üniversitesi">
+                    İstanbul Arel Üniversitesi
+                  </option>
+                  <option value="İstanbul Aydın Üniversitesi">
+                    İstanbul Aydın Üniversitesi
+                  </option>
+                  <option value="İstanbul Bilgi Üniversitesi">
+                    İstanbul Bilgi Üniversitesi
+                  </option>
+                  <option value="İstanbul Bilim Üniversitesi">
+                    İstanbul Bilim Üniversitesi
+                  </option>
+                  <option value="İstanbul Esenyurt Üniversitesi">
+                    İstanbul Esenyurt Üniversitesi
+                  </option>
+                  <option value="İstanbul Gelişim Üniversitesi">
+                    İstanbul Gelişim Üniversitesi
+                  </option>
+                  <option value="İstanbul Kemerburgaz Üniversitesi">
+                    İstanbul Kemerburgaz Üniversitesi
+                  </option>
+                  <option value="İstanbul Kültür Üniversitesi">
+                    İstanbul Kültür Üniversitesi
+                  </option>
+                  <option value="İstanbul Medeniyet Üniversitesi">
+                    İstanbul Medeniyet Üniversitesi
+                  </option>
+                  <option value="İstanbul Medipol Üniversitesi">
+                    İstanbul Medipol Üniversitesi
+                  </option>
+                  <option value="İstanbul Rumeli Üniversitesi">
+                    İstanbul Rumeli Üniversitesi
+                  </option>
+                  <option value="İstanbul Sabahattin Zaim Üniversitesi">
+                    İstanbul Sabahattin Zaim Üniversitesi
+                  </option>
+                  <option value="İstanbul Teknik Üniversitesi">
+                    İstanbul Teknik Üniversitesi
+                  </option>
+                  <option value="İstanbul Ticaret Üniversitesi">
+                    İstanbul Ticaret Üniversitesi
+                  </option>
+                  <option value="İstanbul Üniversitesi">
+                    İstanbul Üniversitesi
+                  </option>
+                  <option value="İstanbul Şehir Üniversitesi">
+                    İstanbul Şehir Üniversitesi
+                  </option>
+                  <option value="İstinye Üniversitesi">
+                    İstinye Üniversitesi
+                  </option>
+                  <option value="İzmir Ekonomi Üniversitesi">
+                    İzmir Ekonomi Üniversitesi
+                  </option>
+                  <option value="İzmir Kâtip Çelebi Üniversitesi">
+                    İzmir Kâtip Çelebi Üniversitesi
+                  </option>
+                  <option value="İzmir Yüksek Teknoloji Enstitüsü">
+                    İzmir Yüksek Teknoloji Enstitüsü
+                  </option>
+                  <option value="İzmir Üniversitesi">İzmir Üniversitesi</option>
+                  <option value="Okan Üniversitesi">Okan Üniversitesi</option>
+                  <option value="Ondokuz Mayıs Üniversitesi">
+                    Ondokuz Mayıs Üniversitesi
+                  </option>
+                  <option value="Ordu Üniversitesi">Ordu Üniversitesi</option>
+                  <option value="Orta Doğu Teknik Üniversitesi">
+                    Orta Doğu Teknik Üniversitesi
+                  </option>
+                  <option value="Osmaniye Korkut Ata Üniversitesi">
+                    Osmaniye Korkut Ata Üniversitesi
+                  </option>
+                  <option value="Özyeğin Üniversitesi">
+                    Özyeğin Üniversitesi
+                  </option>
+                  <option value="Pamukkale Üniversitesi">
+                    Pamukkale Üniversitesi
+                  </option>
+                  <option value="Piri Reis Üniversitesi">
+                    Piri Reis Üniversitesi
+                  </option>
+                  <option value="Polis Akademisi">Polis Akademisi</option>
+                  <option value="Recep Tayyip Erdoğan Üniversitesi">
+                    Recep Tayyip Erdoğan Üniversitesi
+                  </option>
+                  <option value="Sabancı Üniversitesi">
+                    Sabancı Üniversitesi
+                  </option>
+                  <option value="Sakarya Üniversitesi">
+                    Sakarya Üniversitesi
+                  </option>
+                  <option value="Sanko Üniversitesi">Sanko Üniversitesi</option>
+                  <option value="Sağlık Bilimleri Üniversitesi">
+                    Sağlık Bilimleri Üniversitesi
+                  </option>
+                  <option value="Selahattin Eyyubi Üniversitesi">
+                    Selahattin Eyyubi Üniversitesi
+                  </option>
+                  <option value="Selçuk Üniversitesi">
+                    Selçuk Üniversitesi
+                  </option>
+                  <option value="Siirt Üniversitesi">Siirt Üniversitesi</option>
+                  <option value="Sinop Üniversitesi">Sinop Üniversitesi</option>
+                  <option value="Süleyman Demirel Üniversitesi">
+                    Süleyman Demirel Üniversitesi
+                  </option>
+                  <option value="Süleyman Şah Üniversitesi">
+                    Süleyman Şah Üniversitesi
+                  </option>
+                  <option value="Şifa Üniversitesi">Şifa Üniversitesi</option>
+                  <option value="Şırnak Üniversitesi">
+                    Şırnak Üniversitesi
+                  </option>
+                  <option value="TED Üniversitesi">TED Üniversitesi</option>
+                  <option value="TOBB Ekonomi ve Teknoloji Üniversitesi">
+                    TOBB Ekonomi ve Teknoloji Üniversitesi
+                  </option>
+                  <option value="Toros Üniversitesi">Toros Üniversitesi</option>
+                  <option value="Trakya Üniversitesi">
+                    Trakya Üniversitesi
+                  </option>
+                  <option value="Tunceli Üniversitesi">
+                    Tunceli Üniversitesi
+                  </option>
+                  <option value="Turgut Özal Üniversitesi">
+                    Turgut Özal Üniversitesi
+                  </option>
+                  <option value="Türk Alman Üniversitesi">
+                    Türk Alman Üniversitesi
+                  </option>
+                  <option value="Türk Hava Kurumu Üniversitesi">
+                    Türk Hava Kurumu Üniversitesi
+                  </option>
+                  <option
+                    value="Türkiye Uluslararası İslam, Bilim ve Teknoloji Üniversitesi"
+                  >
+                    Türkiye Uluslararası İslam, Bilim ve Teknoloji Üniversitesi
+                  </option>
+                  <option value="Ufuk Üniversitesi">Ufuk Üniversitesi</option>
+                  <option value="Uludağ Üniversitesi">
+                    Uludağ Üniversitesi
+                  </option>
+                  <option value="Uluslararası Antalya Üniversitesi">
+                    Uluslararası Antalya Üniversitesi
+                  </option>
+                  <option value="Uşak Üniversitesi">Uşak Üniversitesi</option>
+                  <option value="Üsküdar Üniversitesi">
+                    Üsküdar Üniversitesi
+                  </option>
+                  <option value="Yalova Üniversitesi">
+                    Yalova Üniversitesi
+                  </option>
+                  <option value="Yaşar Üniversitesi">Yaşar Üniversitesi</option>
+                  <option value="Yeditepe Üniversitesi">
+                    Yeditepe Üniversitesi
+                  </option>
+                  <option value="Yeni Yüzyıl Üniversitesi">
+                    Yeni Yüzyıl Üniversitesi
+                  </option>
+                  <option value="Yüksek İhtisas Üniversitesi**">
+                    Yüksek İhtisas Üniversitesi**
+                  </option>
+                  <option value="Yüzüncü Yıl Üniversitesi">
+                    Yüzüncü Yıl Üniversitesi
+                  </option>
+                  <option value="Yıldırım Beyazıt Üniversitesi">
+                    Yıldırım Beyazıt Üniversitesi
+                  </option>
+                  <option value="Yıldız Teknik Üniversitesi">
+                    Yıldız Teknik Üniversitesi
+                  </option>
+                  <option value="Zirve Üniversitesi">Zirve Üniversitesi</option>
+                </select>
               </div>
               <div class="form-group">
-                  <label for="cinsiyet">Cinsiyet:</label>
-                  <input type="radio" name="cinsiyet" /> Erkek
-                  <input type="radio" name="cinsiyet" /> Kadın
+                <label for="cinsiyet">Cinsiyet:</label>
+                <input type="radio" name="cinsiyet" /> Erkek
+                <input type="radio" name="cinsiyet" /> Kadın
               </div>
               <div class="form-group">
-                  <label for="bio">Hakkımda:</label>
-                  <textarea id="bio" rows="3" class="form-control"></textarea>
+                <label for="bio">Hakkımda:</label>
+                <textarea id="bio" rows="3" class="form-control"></textarea>
               </div>
               <div class="form-check">
-                  <input type="checkbox" class="form-check-input" id="sozlesme">
-                  <label class="form-check-label" for="sozlesme"><a href="üyelik-sözleşmesi.html">
-                      Üyelik Sözleşmesi</a> şartlarını okudum ve kabul ediyorum.
-                  </label>
+                <input type="checkbox" class="form-check-input" id="sozlesme" />
+                <label class="form-check-label" for="sozlesme"
+                  ><a href="üyelik-sözleşmesi.html"> Üyelik Sözleşmesi</a>
+                  şartlarını okudum ve kabul ediyorum.
+                </label>
               </div>
-              <button type="submit" class="btn btn-success float-lg-right">Kaydet</button>
-          </form>
-      </div>
-  </div>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>
-</body>
+              <button type="submit" class="btn btn-success float-lg-right">
+                Kaydet
+              </button>
+            </form>
+          </div>
+          <div class="col-sm mt-5">
+            <form class="d-flex" role="search">
+              <input
+                class="form-control me-2 form-search"
+                type="search"
+                placeholder="Ara"
+                aria-label="Search"
+              />
+              <button class="btn btn-warning" type="submit">Ara</button>
+            </form>
+            <div class="mt-3 p-title">İlgini çekebilecek paylaşımlar</div>
+            <hr class="mt-2" />
+            <div class="row">
+              <div class="col-sm-3">
+                <img
+                  class="w-100"
+                  src="images/profil.jpg"
+                  alt=""
+                  style="border-radius: 50%"
+                />
+              </div>
+              <div class="col-sm-8">
+                Lorem ipsum dolor sit amet consectetur.
+              </div>
+              <hr class="mt-2" />
+              <div class="col-sm-3">
+                <img
+                  class="w-100"
+                  src="images/profil.jpg"
+                  alt=""
+                  style="border-radius: 50%"
+                />
+              </div>
+              <div class="col-sm-8">
+                Lorem ipsum dolor sit amet consectetur.
+              </div>
+              <br />
+              <hr />
+              <div class="col-sm-3">
+                <img
+                  class="w-100"
+                  src="images/profil.jpg"
+                  alt=""
+                  style="border-radius: 50%"
+                />
+              </div>
+              <div class="col-sm-8">
+                Lorem ipsum dolor sit amet consectetur.
+              </div>
+            </div>
+            <hr />
+            <footer
+              class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top"
+            >
+              <p class="col-md-4 mb-0 text-muted">© 2022</p>
 
+              <a
+                href="/"
+                class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none"
+              >
+                <i class="fa-solid fa-stethoscope logo"></i>
+              </a>
+
+              <ul class="nav col-md-4 justify-content-end">
+                <li class="nav-item">
+                  <a href="#" class="nav-link px-2 text-muted">Hakkımızda</a>
+                </li>
+              </ul>
+            </footer>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="bootstrap-5.2.2-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+  </body>
 </html>
